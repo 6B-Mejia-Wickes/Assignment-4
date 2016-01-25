@@ -46,7 +46,7 @@ exports.read = function(req, res) {
 /* Update a listing */
 exports.update = function(req, res) {
   var listing = req.listing; 
-  
+
   //replace listing with properties in req.body
   listing.name = req.body.name;
   listing.code = req.body.code;
@@ -67,7 +67,6 @@ exports.update = function(req, res) {
       res.json(listing);
     }
   });
-};
 };
 
 /* Delete a listing */
