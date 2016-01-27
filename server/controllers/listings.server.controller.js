@@ -52,19 +52,21 @@ exports.update = function(req, res) {
   listing.code = req.body.code;
   listing.address = req.body.address;
   
-  //save coordinates - check to see if this works right later
+  //save coordinates 
   if(req.results) {
     listing.coordinates = {
       latitude: req.results.lat, 
       longitude: req.results.lng
     };
   }
+
   //save listing
   listing.save(function(err){
     if(err) {
       console.log(err);
       res.status(400).send(err);
-    } else {
+    } 
+    else {
       res.json(listing);
     }
   });
@@ -80,7 +82,7 @@ exports.delete = function(req, res) {
     } 
     else {
       res.json(listing);
-      console.log('listing deleted');
+
     }
   });
 };
@@ -95,7 +97,7 @@ exports.list = function(req, res) {
     }
     else{
       res.json(listings);
-      console.log('Alphabetically listed');
+
     }
   });
 };
