@@ -51,6 +51,7 @@ exports.update = function(req, res) {
   listing.name = req.body.name;
   listing.code = req.body.code;
   listing.address = req.body.address;
+  
   //save coordinates - check to see if this works right later
   if(req.results) {
     listing.coordinates = {
